@@ -21,22 +21,14 @@
 <body>
 <script>
 
-$(document).bind('pageinit') {
-	('#shake').click()
-         var request = $.ajax(
-             {
-                 url: '/cgi/cac',
-                 type: 'POST',
-                 async: true,
-                 data: { 'sid' : bay_cgi.cgi_sid,
-                     'account' : bay_cgi.cgi_account,
-                     'storage' : bay_cgi.cpi_storage,
-                     'startDate' : '20120101',
-                     'command' : 'GetCacDump'
-                 }
-             });
 
-}
+$( document ).bind( "mobileinit", function() {
+    // Make your jQuery Mobile framework configuration changes here!
+
+	$.support.cors = true;
+	$.mobile.allowCrossDomainPages = true;
+
+});
 
 
 </script> 
